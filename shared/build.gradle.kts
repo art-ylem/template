@@ -26,6 +26,10 @@ kotlin {
                 implementation(libs.kotlinx.serialization.json)
                 implementation(libs.kotlinx.datetime)
                 implementation(libs.realm.base)
+                with(Deps.Koin) {
+                    implementation(core)
+                    api(test)
+                }
             }
         }
         val androidMain by getting {
@@ -71,9 +75,9 @@ kotlin {
 }
 
 android {
-    namespace = "template.application"
-    compileSdk = 31
+    namespace = ConfigData.namespace
+    compileSdk = ConfigData.compileSdkVersion
     defaultConfig {
-        minSdk = 21
+        minSdk = ConfigData.minSdkVersion
     }
 }
