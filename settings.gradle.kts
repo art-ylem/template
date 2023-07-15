@@ -8,10 +8,12 @@ pluginManagement {
         mavenCentral()
     }
     plugins {
-        kotlin("multiplatform").version("1.8.10")
-        kotlin("plugin.serialization").version("1.8.10")
+        kotlin("multiplatform").version("1.8.22")
+        kotlin("plugin.serialization").version("1.8.22")
         id("com.android.library").version("7.4.2")
         id("io.realm.kotlin").version("1.5.2")
+        id("com.android.application") version "7.4.2"
+        id("org.jetbrains.kotlin.android") version "1.7.20"
     }
 }
 
@@ -33,3 +35,4 @@ dependencyResolutionManagement {
         }
     }
 }
+include(":androidapp")
